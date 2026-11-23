@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NasFast</title>
+<meta name="description" content="NasFast puts the NAS you already own in Finder and Explorer: fast browsing, offline projects, resumable ingest and secure remote access, with your originals staying on the NAS.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#"><img src="icon.svg" alt="" width="28" height="28"> NasFast</a>
+    <nav aria-label="Sections">
+      <a href="#why">Why</a>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#security">Security</a>
+      <a href="#status">Status</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">For photographers, videographers and small studios</p>
+    <h1>Your NAS, as fast and dependable as a local drive.</h1>
+    <p class="lede">NasFast puts the NAS you already own into Finder, with Windows Explorer in preview. Browse huge shoots instantly, take a project offline, ingest cards that survive a dropped connection, and reach your files from anywhere. Your originals never leave the NAS.</p>
+    <p class="cta">
+      <a class="button" href="#status">See project status</a>
+      <a class="button ghost" href="#how">How it works</a>
+    </p>
+    <p class="note">Early pilot. Not yet available for download.</p>
+  </div>
+</section>
+
+<section id="why" class="band">
+  <div class="wrap">
+    <h2>Why not just use SMB?</h2>
+    <p class="section-lede">SMB is fine for big copies on a fast LAN. It's the rest of the day where it hurts.</p>
+    <div class="grid three">
+      <article class="card">
+        <h3>Browsing big folders</h3>
+        <p>Thousands of RAW files in one folder means waiting on every visit. NasFast keeps a metadata cache, so revisiting a folder is immediate and changes on the NAS arrive as live updates.</p>
+      </article>
+      <article class="card">
+        <h3>Leaving the studio</h3>
+        <p>SMB has no idea which files you'll need on the road. Pin a project and NasFast downloads it, verifies every byte and tells you honestly when it's fully available offline.</p>
+      </article>
+      <article class="card">
+        <h3>Working remotely</h3>
+        <p>SMB over a VPN is chatty and fragile. NasFast is built on HTTPS with parallel range requests and reconnects on its own when your network changes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <div class="grid two features">
+      <div><h3>Native in Finder</h3><p>Your NAS shares appear in Finder's sidebar through Apple's File Provider. Files download on demand, so a 10 TB share costs almost nothing on your Mac until you open something. A Windows Explorer client is in preview.</p></div>
+      <div><h3>Offline projects</h3><p>Pin a folder to keep it on your SSD. Every chunk is checked against the NAS before NasFast calls the project available.</p></div>
+      <div><h3>Safe editing</h3><p>Edits are checked out with a lock on the NAS, uploaded as changed parts only, and committed atomically. If someone else changed the file, you keep your copy instead of silently overwriting theirs.</p></div>
+      <div><h3>Resumable ingest</h3><p>Uploads resume after an interruption and only count as done once they're durable on the NAS.</p></div>
+      <div><h3>Your NAS permissions</h3><p>On Synology, people sign in as their DSM accounts and NasFast enforces the same folder permissions, checked on the NAS for every request.</p></div>
+      <div><h3>"Why is this slow?"</h3><p>Instead of a spinner, NasFast tells you the likely cause: drives waking up, the NAS processor at its limit, a slow connection or a busy Mac.</p></div>
+      <div><h3>Remote access you own</h3><p>Use your router's port forward and dynamic DNS, or a private network like Tailscale. No vendor cloud account, relay or subscription is involved.</p></div>
+      <div><h3>Several NAS boxes</h3><p>Each NAS and share is independent. One being offline never interrupts another.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="band">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="section-lede">A small companion server runs on your NAS next to your existing folders. Your computers talk to it over mutually authenticated HTTPS.</p>
+    <figure class="diagram">
+      <svg viewBox="0 0 760 250" role="img" aria-labelledby="diagram-title">
+        <title id="diagram-title">Mac and Windows clients connect over mutual TLS to the NasFast companion on the NAS, which serves the existing shared folders.</title>
+        <g class="box"><rect x="10" y="30" width="190" height="80" rx="12"/><text x="105" y="65">Mac</text><text class="sub" x="105" y="88">Finder · offline cache</text></g>
+        <g class="box"><rect x="10" y="140" width="190" height="80" rx="12"/><text x="105" y="175">Windows (preview)</text><text class="sub" x="105" y="198">Explorer · offline cache</text></g>
+        <g class="link"><path d="M200 70 C 270 70, 270 125, 310 125"/><path d="M200 180 C 270 180, 270 125, 310 125"/></g>
+        <text class="label" x="262" y="56">mutual TLS</text>
+        <g class="box accent"><rect x="310" y="80" width="235" height="90" rx="12"/><text x="427" y="118">NasFast companion</text><text class="sub" x="427" y="142">catalog · permissions · live updates</text></g>
+        <g class="link"><path d="M545 125 L 560 125"/></g>
+        <g class="box store"><rect x="560" y="60" width="190" height="130" rx="12"/><text x="655" y="100">Your NAS shares</text><text class="sub" x="655" y="124">originals, untouched</text><text class="sub" x="655" y="146">still work over SMB</text></g>
+      </svg>
+    </figure>
+    <ol class="steps">
+      <li><strong>Install the companion on the NAS.</strong> It runs as an ordinary, unprivileged service and reads the folders you choose. Your files stay in their normal folders, in their normal formats.</li>
+      <li><strong>Claim it from your computer.</strong> On first start the NAS shows a short setup phrase. Type it into the NasFast app on the same local network and that computer becomes the owner.</li>
+      <li><strong>Invite your other devices.</strong> Each device gets its own certificate from your NAS. Revoke a lost laptop and it's locked out.</li>
+      <li><strong>Open your shares in Finder.</strong> NasFast picks the fastest working route on its own: the local network at home, your public address or Tailscale when you're away.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="security">
+  <div class="wrap">
+    <h2>Security without a cloud in the middle</h2>
+    <div class="grid two">
+      <ul class="checks">
+        <li>Each NAS is its own certificate authority. Nothing is shared with us or any other service.</li>
+        <li>Every connection uses TLS with a device certificate, and the app checks the NAS's exact certificate fingerprint.</li>
+        <li>New devices can only be enrolled from your local network, with a one-time phrase.</li>
+        <li>The internet-facing port refuses any connection that doesn't present an enrolled device certificate.</li>
+      </ul>
+      <ul class="checks">
+        <li>The companion never runs as root. On Synology, a small separate helper asks DSM for each permission decision.</li>
+        <li>Permission changes on the NAS apply to the very next request. Nothing is cached.</li>
+        <li>Revoking a device or a person takes effect immediately.</li>
+        <li>No telemetry. Diagnostics bundles are created only when you ask, with names and addresses removed.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Measured, not promised</h2>
+    <p class="section-lede">Results from a Synology DS218play, a low-end four-core ARM model with 1 GB of RAM, on wired gigabit Ethernet. We publish numbers by workload rather than claiming a blanket speed-up.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Workload</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Large sequential copy</td><td>About the same as SMB (2–9% faster), both near gigabit line rate</td></tr>
+          <tr><td>Large file copied in Finder</td><td>1.1 GB in about 10 seconds</td></tr>
+          <tr><td>Folder listing with Synology permission checks</td><td>13 folders in 0.18 s, down from 0.65 s after batching the checks</td></tr>
+          <tr><td>Concurrent random reads</td><td>Much faster than macOS's SMB client in a synthetic test; still to be confirmed with real applications</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="status">
+  <div class="wrap">
+    <h2>Project status</h2>
+    <p class="section-lede">NasFast is an early pilot built around one photographer's real workflow. It works day to day on one Synology NAS, but it isn't ready for anyone else's originals yet.</p>
+    <div class="grid three status">
+      <div><h3>Working</h3><ul><li>Mac app and Finder integration</li><li>Offline projects</li><li>Safe editing and resumable uploads</li><li>DSM account permissions</li><li>Remote access over your own router</li></ul></div>
+      <div><h3>In progress</h3><ul><li>Windows Explorer client (preview)</li><li>Validation on more Synology models</li><li>Installer and automatic start on the NAS</li><li>Sleep, network-change and restart testing</li></ul></div>
+      <div><h3>Not planned</h3><ul><li>Replacing your backups</li><li>Hosting Lightroom Classic catalogs or other app databases over the network</li><li>Storing your files in someone else's cloud</li></ul></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>NasFast is an independent project and isn't affiliated with Synology, Apple or Microsoft.</p>
+  </div>
+</footer>
+</body>
+</html>
