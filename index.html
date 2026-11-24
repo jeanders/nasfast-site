@@ -14,7 +14,7 @@
   <div class="wrap bar">
     <a class="brand" href="#"><img src="icon.svg" alt="" width="28" height="28"> NasFast</a>
     <nav aria-label="Sections">
-      <a href="#why">Why</a>
+      <a href="#benefits">Benefits</a>
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#security">Security</a>
@@ -27,49 +27,124 @@
 <section class="hero">
   <div class="wrap">
     <p class="eyebrow">For photographers, videographers and small studios</p>
-    <h1>Your NAS, as fast and dependable as a local drive.</h1>
-    <p class="lede">NasFast puts the NAS you already own into Finder, with Windows Explorer in preview. Browse huge shoots instantly, take a project offline, ingest cards that survive a dropped connection, and reach your files from anywhere. Your originals never leave the NAS.</p>
+    <h1>Work from your NAS like it's a drive in your Mac.</h1>
+    <p class="lede">You bought a NAS to keep your work safe. Then every folder takes ages to open, the files stay behind when you leave the studio, and getting to them from anywhere else is a chore. NasFast fixes that, without moving your originals or paying for cloud storage.</p>
+    <ul class="promise">
+      <li>Folders open instantly</li>
+      <li>Projects go offline with you</li>
+      <li>Your files, from anywhere</li>
+      <li>No subscription, no cloud copy</li>
+    </ul>
     <p class="cta">
-      <a class="button" href="#status">See project status</a>
-      <a class="button ghost" href="#how">How it works</a>
+      <a class="button" href="#benefits">See what it fixes</a>
+      <a class="button ghost" href="#status">Project status</a>
     </p>
     <p class="note">Early pilot. Not yet available for download.</p>
+
+    <figure class="shot">
+      <div class="mac-window" role="img" aria-label="Illustration of a Finder window showing a NasFast share in the sidebar, with project folders marked as available offline or stored on the NAS.">
+        <div class="mw-bar">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="mw-title">2025 Client Work</span>
+          <span class="mw-sp"></span>
+        </div>
+        <div class="mw-body">
+          <aside class="mw-side">
+            <p class="mw-head">Favorites</p>
+            <p>Desktop</p><p>Documents</p><p>Downloads</p>
+            <p class="mw-head">Locations</p>
+            <p class="on"><span class="ico nas"></span>NasFast – Studio</p>
+            <p><span class="ico nas"></span>NasFast – Archive</p>
+          </aside>
+          <div class="mw-list">
+            <div class="mw-row mw-cols"><span>Name</span><span>Size</span><span>Status</span></div>
+            <div class="mw-row"><span><span class="ico dir"></span>2025-04 Coastal Workshop</span><span>212 GB</span><span class="st ok">Offline</span></div>
+            <div class="mw-row sel"><span><span class="ico dir"></span>2025-06 Harper &amp; Lee Wedding</span><span>486 GB</span><span class="st ok">Offline</span></div>
+            <div class="mw-row"><span><span class="ico dir"></span>2025-07 Studio Portraits</span><span>94 GB</span><span class="st sync">Downloading 62%</span></div>
+            <div class="mw-row"><span><span class="ico dir"></span>2025-08 Brand Shoot</span><span>318 GB</span><span class="st nas">On NAS</span></div>
+            <div class="mw-row"><span><span class="ico dir"></span>2025-09 Mountain Elopement</span><span>401 GB</span><span class="st nas">On NAS</span></div>
+            <div class="mw-row"><span><span class="ico dir"></span>2025-10 Autumn Minis</span><span>77 GB</span><span class="st nas">On NAS</span></div>
+            <div class="mw-row"><span><span class="ico file"></span>Contracts.pdf</span><span>2 MB</span><span class="st ok">Offline</span></div>
+          </div>
+        </div>
+        <div class="mw-foot">7 items · Connected from away over your own router</div>
+      </div>
+      <figcaption>Illustration. Your NAS appears in Finder like any drive. Keep the projects you need offline and leave the rest on the NAS.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section id="why" class="band">
+<section id="benefits" class="band">
   <div class="wrap">
-    <h2>Why not just use SMB?</h2>
-    <p class="section-lede">SMB is fine for big copies on a fast LAN. It's the rest of the day where it hurts.</p>
-    <div class="grid three">
+    <h2>The everyday problems it solves</h2>
+    <p class="section-lede">A NAS is great at storing files. Working from one day to day is where it lets you down.</p>
+    <div class="grid two benefits">
       <article class="card">
-        <h3>Browsing big folders</h3>
-        <p>Thousands of RAW files in one folder means waiting on every visit. NasFast keeps a metadata cache, so revisiting a folder is immediate and changes on the NAS arrive as live updates.</p>
+        <h3>Stop waiting for folders to load</h3>
+        <p class="problem">A folder with a few thousand RAW files can take a long time to appear, every single time you open it.</p>
+        <p>NasFast remembers what's on your NAS, so folders you've been to open right away, and new files show up as soon as they land.</p>
       </article>
       <article class="card">
-        <h3>Leaving the studio</h3>
-        <p>SMB has no idea which files you'll need on the road. Pin a project and NasFast downloads it, verifies every byte and tells you honestly when it's fully available offline.</p>
+        <h3>Take a shoot with you</h3>
+        <p class="problem">On a plane, at a client's or anywhere without a good connection, your NAS is out of reach.</p>
+        <p>Mark a project to keep offline and it's on your laptop, checked file by file, so you know it's complete before you leave.</p>
       </article>
       <article class="card">
-        <h3>Working remotely</h3>
-        <p>SMB over a VPN is chatty and fragile. NasFast is built on HTTPS with parallel range requests and reconnects on its own when your network changes.</p>
+        <h3>Reach your files from anywhere</h3>
+        <p class="problem">VPNs are fiddly, and cloud sync costs money every month and copies your originals to someone else's servers.</p>
+        <p>Connect securely to your own NAS from home, a hotel or a phone hotspot. It switches between connections on its own.</p>
       </article>
+      <article class="card">
+        <h3>Never lose an import or overwrite work</h3>
+        <p class="problem">Wi-Fi drops halfway through copying a card, or two people save the same file and one version silently disappears.</p>
+        <p>Copies pick up where they stopped. If someone else changed a file, you keep both versions instead of losing one.</p>
+      </article>
+      <article class="card">
+        <h3>Everything stays in Finder</h3>
+        <p class="problem">New tools usually mean a new app to learn and a new place your files live.</p>
+        <p>Your NAS shows up in Finder's sidebar like any other drive, using almost no space on your Mac until you open something. Windows support is in preview.</p>
+      </article>
+      <article class="card">
+        <h3>Know why something is slow</h3>
+        <p class="problem">When the network is slow you get a spinner and no idea whether to wait, move or give up.</p>
+        <p>NasFast tells you the likely cause in plain words: the drives waking up, a busy NAS, a weak connection or a busy Mac.</p>
+      </article>
+    </div>
+
+    <div class="grid two shots">
+      <figure class="shot">
+        <div class="panel" role="img" aria-label="Illustration of the NasFast status window showing a remote connection, two projects ready offline and one downloading.">
+          <div class="pn-head"><span class="ico nas"></span><strong>Studio NAS</strong><span class="pill ok">Connected</span></div>
+          <p class="pn-sub">Away from the studio · over your own router</p>
+          <div class="pn-item"><span>2025-04 Coastal Workshop</span><span class="st ok">Ready offline</span></div>
+          <div class="pn-item"><span>2025-06 Harper &amp; Lee Wedding</span><span class="st ok">Ready offline</span></div>
+          <div class="pn-item"><span>2025-07 Studio Portraits</span><span class="st sync">58 of 94 GB</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
+        </div>
+        <figcaption>Illustration. See at a glance what's safe to take with you.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="panel" role="img" aria-label="Illustration of a NasFast notice explaining that a slow folder is caused by the NAS drives waking up.">
+          <div class="pn-head"><span class="ico warn"></span><strong>Opening is slower than usual</strong></div>
+          <p class="pn-big">The NAS drives are waking up from sleep.</p>
+          <p class="pn-sub">This usually passes in under a minute. Your connection is fine and nothing needs fixing.</p>
+          <div class="pn-item"><span>Connection</span><span class="st ok">Good</span></div>
+          <div class="pn-item"><span>NAS drives</span><span class="st sync">Spinning up</span></div>
+          <div class="pn-item"><span>Your Mac</span><span class="st ok">Idle</span></div>
+        </div>
+        <figcaption>Illustration. A plain answer instead of a spinner.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
 <section id="features">
   <div class="wrap">
-    <h2>What it does</h2>
-    <div class="grid two features">
-      <div><h3>Native in Finder</h3><p>Your NAS shares appear in Finder's sidebar through Apple's File Provider. Files download on demand, so a 10 TB share costs almost nothing on your Mac until you open something. A Windows Explorer client is in preview.</p></div>
-      <div><h3>Offline projects</h3><p>Pin a folder to keep it on your SSD. Every chunk is checked against the NAS before NasFast calls the project available.</p></div>
-      <div><h3>Safe editing</h3><p>Edits are checked out with a lock on the NAS, uploaded as changed parts only, and committed atomically. If someone else changed the file, you keep your copy instead of silently overwriting theirs.</p></div>
-      <div><h3>Resumable ingest</h3><p>Uploads resume after an interruption and only count as done once they're durable on the NAS.</p></div>
-      <div><h3>Your NAS permissions</h3><p>On Synology, people sign in as their DSM accounts and NasFast enforces the same folder permissions, checked on the NAS for every request.</p></div>
-      <div><h3>"Why is this slow?"</h3><p>Instead of a spinner, NasFast tells you the likely cause: drives waking up, the NAS processor at its limit, a slow connection or a busy Mac.</p></div>
-      <div><h3>Remote access you own</h3><p>Use your router's port forward and dynamic DNS, or a private network like Tailscale. No vendor cloud account, relay or subscription is involved.</p></div>
-      <div><h3>Several NAS boxes</h3><p>Each NAS and share is independent. One being offline never interrupts another.</p></div>
+    <h2>Built around what you already have</h2>
+    <div class="grid three features">
+      <div><h3>Your NAS, your folders</h3><p>Files stay in their normal folders and formats, and still work over SMB. Nothing is converted or locked in.</p></div>
+      <div><h3>Your existing accounts</h3><p>On Synology, people sign in with their DSM accounts and see exactly the folders they're allowed to.</p></div>
+      <div><h3>Your own network</h3><p>Remote access uses your router or a private network like Tailscale. No vendor account, relay or subscription.</p></div>
     </div>
   </div>
 </section>
