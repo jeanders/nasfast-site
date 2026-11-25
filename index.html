@@ -186,7 +186,7 @@
       </ul>
       <ul class="checks">
         <li>The companion never runs as root. On Synology, a small separate helper asks DSM for each permission decision.</li>
-        <li>Permission changes on the NAS apply to the very next request. Nothing is cached.</li>
+        <li>Permission changes on the NAS apply within 30 seconds. Revoking a device or a person applies to the very next request.</li>
         <li>Revoking a device or a person takes effect immediately.</li>
         <li>No telemetry. Diagnostics bundles are created only when you ask, with names and addresses removed.</li>
       </ul>
